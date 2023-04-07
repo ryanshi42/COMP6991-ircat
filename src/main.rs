@@ -1,4 +1,4 @@
-use bufstream::BufStream;
+ use bufstream::BufStream;
 use rustyline::{error::ReadlineError, Editor};
 use std::{
     error::Error,
@@ -30,6 +30,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut stream_read = BufStream::new(stream_read);
 
     let (send, recv) = channel::<String>();
+    println!("connected!");
 
     // network thread read
     {
